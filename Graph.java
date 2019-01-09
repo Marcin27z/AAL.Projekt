@@ -12,7 +12,7 @@ class Graph {
         this.z = z;
         nodes = new Node[n];
         for (int i = 0; i < n; i++) {
-            nodes[i] = new Node(s.get(i), i);
+            nodes[i] = new Node(s.get(i), i + 1);
         }
     }
 
@@ -51,16 +51,16 @@ class Graph {
         private int cost;
         private int costAtArrival;
         private List<Node> neighbors = new ArrayList<>();
-        State[] getStates() {
-            return states;
-        }
-
         private State[] states;
 
         Node(int cost, int index) {
             this.index = index;
             this.cost = cost;
             states = new State[z + 1];
+        }
+
+        State[] getStates() {
+            return states;
         }
 
         List<Node> getNeighbors() {

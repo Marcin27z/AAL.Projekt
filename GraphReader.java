@@ -16,8 +16,8 @@ class GraphReader {
             String[] firstLineValues = firstLine.split(" ");
             nodes = Integer.parseInt(firstLineValues[0]);
             edges = Integer.parseInt(firstLineValues[1]);
-            p = Integer.parseInt(firstLineValues[2]);
-            k = Integer.parseInt(firstLineValues[3]);
+            p = Integer.parseInt(firstLineValues[2]) - 1;
+            k = Integer.parseInt(firstLineValues[3]) - 1;
             z = Integer.parseInt(firstLineValues[4]);
             String secondLine = bufferedReader.readLine();
             String[] secondLineValues = secondLine.split(" ");
