@@ -9,6 +9,8 @@ class GraphUtils {
         int k = graph.getK();
         Deque<State> deque = new ArrayDeque<>();
         Graph.Node[] nodes = graph.getNodes();
+        if (p < 0 || k < 0 || p > nodes.length || k > nodes.length || nodes[p].getCost() > graph.getZ())
+            return Optional.empty();
         nodes[p].setCostAtArrival(nodes[p].getCost());
         deque.add(new State(nodes[p], nodes[p].getCostAtArrival()));
         nodes[p].visit(new State(nodes[p], nodes[p].getCostAtArrival()));

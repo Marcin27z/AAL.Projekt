@@ -33,9 +33,11 @@ class GraphReader {
                 String line = bufferedReader.readLine();
                 u = Integer.parseInt(line.split(" ")[0]);
                 v = Integer.parseInt(line.split(" ")[1]);
+                if (v > nodes || u > nodes)
+                    return Optional.empty();
                 graph.addEdge(u, v);
             }
-        } catch (IOException e) {
+        } catch (IOException | NumberFormatException e) {
             return Optional.empty();
         }
         return Optional.of(graph);
